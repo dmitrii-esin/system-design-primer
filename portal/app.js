@@ -380,6 +380,9 @@ class LearningPortal {
   addExercisesSection(lesson) {
     if (!lesson.exercises || lesson.exercises.length === 0) return;
 
+    // Store lesson reference for exercises
+    this.currentLessonData = lesson;
+
     const exercisesHtml = `
       <div class="exercise-section">
         <h3>🎯 Practical Exercises</h3>
@@ -387,7 +390,7 @@ class LearningPortal {
           <div class="exercise-item">
             <h4>${ex.title}</h4>
             <p>${ex.description}</p>
-            <button class="btn btn-secondary" data-exercise-index="${index}">
+            <button class="btn btn-secondary exercise-btn" data-exercise-index="${index}">
               Start Exercise
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -400,12 +403,15 @@ class LearningPortal {
 
     this.lessonContent.innerHTML += exercisesHtml;
 
-    // Add click handlers for exercise buttons
-    this.lessonContent.querySelectorAll('[data-exercise-index]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const index = parseInt(btn.dataset.exerciseIndex);
-        this.showExercise(lesson, index);
-      });
+    // Use event delegation for exercise buttons
+    const self = this;
+    this.lessonContent.querySelectorAll('.exercise-btn').forEach(btn => {
+      btn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const index = parseInt(this.dataset.exerciseIndex);
+        self.showExercise(self.currentLessonData, index);
+      };
     });
   }
 
@@ -434,16 +440,38 @@ class LearningPortal {
   }
 
   showExercise(lesson, exerciseIndex) {
+    if (!lesson || !lesson.exercises) {
+      console.error('No lesson or exercises found');
+      return;
+    }
     const exercise = lesson.exercises[exerciseIndex];
-    if (!exercise) return;
+    if (!exercise) {
+      console.error('Exercise not found at index', exerciseIndex);
+      return;
+    }
 
-    this.exerciseTitle.textContent = exercise.title;
-    this.exerciseContent.innerHTML = exercise.content;
+    // Set exercise content
+    if (this.exerciseTitle) {
+      this.exerciseTitle.textContent = exercise.title;
+    }
+    if (this.exerciseContent) {
+      this.exerciseContent.innerHTML = exercise.content;
+    }
 
     // Initialize collapsibles in exercise
     this.initCollapsibles();
 
-    this.showView('exercise');
+    // Show exercise view
+    Object.values(this.views).forEach(view => {
+      if (view) view.classList.remove('active');
+    });
+    if (this.views.exercise) {
+      this.views.exercise.classList.add('active');
+    }
+    this.currentView = 'exercise';
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
   }
 
   navigateLesson(direction) {
