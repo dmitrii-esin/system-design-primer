@@ -10,11 +10,11 @@
 | 4 | Intermediate - Caching | ⬜ Not Started | | |
 | 5 | Intermediate - Async | ⬜ Not Started | | |
 | 6 | Intermediate - Interview Framework | ⬜ Not Started | | |
-| 7 | Practice - Problems Set 1 | ⬜ Not Started | | |
-| 8 | Practice - Problems Set 2 | ⬜ Not Started | | |
-| 9 | Practice - Advanced Problems | ⬜ Not Started | | |
-| 10 | Practice - OO Design | ⬜ Not Started | | |
-| 11 | Advanced - Real Architectures | ⬜ Not Started | | |
+| 7 | **NEW** - Security & API Design | ⬜ Not Started | | |
+| 8 | **NEW** - Rate Limiting & Monitoring | ⬜ Not Started | | |
+| 9 | Practice - Problems Set 1 | ⬜ Not Started | | |
+| 10 | Practice - Problems Set 2 | ⬜ Not Started | | |
+| 11 | Practice - Advanced Problems + OO | ⬜ Not Started | | |
 | 12 | Advanced - Mock Interviews | ⬜ Not Started | | |
 
 **Legend:** ⬜ Not Started | 🟡 In Progress | ✅ Complete
@@ -205,15 +205,71 @@
 
 ---
 
-## Week 7: System Design Problems - Set 1
+## Week 7: Security & API Design (NEW)
+
+### Day 1-2: Authentication & Authorization
+- [ ] Study notes/week07-security-api.md: Authentication section
+- [ ] Understand JWT vs Session trade-offs
+- [ ] Study OAuth 2.0 flow
+- [ ] Daily Anki reviews completed
+
+### Day 3-4: API Design Best Practices
+- [ ] Study notes/week07-security-api.md: API Design section
+- [ ] Practice designing REST endpoints
+- [ ] Understand HTTP status codes
+- [ ] Study pagination strategies
+
+### Day 5-7: Security Patterns
+- [ ] Study HTTPS/TLS basics
+- [ ] Understand common vulnerabilities (XSS, CSRF, SQL injection)
+- [ ] Complete exercises/quick-drills.md (D1, D2)
+- [ ] Complete exercises/self-quiz.md Week 7
+- [ ] Daily Anki reviews completed
+
+**Week 7 Notes:**
+```
+(Add your notes here)
+```
+
+---
+
+## Week 8: Rate Limiting & Monitoring (NEW)
+
+### Day 1-3: Rate Limiting Algorithms
+- [ ] Study notes/week08-ratelimit-monitoring.md: Rate Limiting section
+- [ ] Understand Token Bucket, Leaky Bucket, Sliding Window
+- [ ] Know when to use which algorithm
+- [ ] Study distributed rate limiting with Redis
+
+### Day 4-5: Monitoring & Observability
+- [ ] Study Three Pillars: Metrics, Logs, Traces
+- [ ] Understand p50, p95, p99 percentiles
+- [ ] Study SLI/SLO/SLA concepts
+
+### Day 6-7: Alerting & Patterns
+- [ ] Study circuit breaker pattern
+- [ ] Understand health checks (liveness vs readiness)
+- [ ] Complete exercises/self-quiz.md Week 8
+- [ ] Daily Anki reviews completed
+
+**Week 8 Notes:**
+```
+(Add your notes here)
+```
+
+---
+
+## Week 9: System Design Problems - Set 1
 
 ### Day 1-2: Design Pastebin/Bit.ly
+- [ ] Practice whiteboard-prompts.md: Prompt 3.1
 - [ ] Attempt solution independently (30 min)
 - [ ] Review solutions/system_design/pastebin/README.md
 - [ ] Identify gaps in approach
 - [ ] Re-attempt after 2 days
 
 ### Day 3-4: Design Twitter Timeline
+- [ ] Practice whiteboard-prompts.md: Prompt 3.2
 - [ ] Attempt solution independently (30 min)
 - [ ] Review solutions/system_design/twitter/README.md
 - [ ] Identify gaps in approach
@@ -225,14 +281,14 @@
 - [ ] Identify gaps in approach
 - [ ] Daily Anki reviews completed
 
-**Week 7 Notes:**
+**Week 9 Notes:**
 ```
 (Add your notes here)
 ```
 
 ---
 
-## Week 8: System Design Problems - Set 2
+## Week 10: System Design Problems - Set 2
 
 ### Day 1-2: Design Mint.com
 - [ ] Attempt solution independently (30 min)
@@ -250,55 +306,6 @@
 - [ ] Identify gaps in approach
 - [ ] Daily Anki reviews completed
 
-**Week 8 Notes:**
-```
-(Add your notes here)
-```
-
----
-
-## Week 9: Advanced System Design Problems
-
-### Day 1-2: Design Sales Rank
-- [ ] Attempt solution independently (30 min)
-- [ ] Review solutions/system_design/sales_rank/README.md
-- [ ] Understand MapReduce patterns
-
-### Day 3-5: Design System at Scale on AWS
-- [ ] Study solutions/system_design/scaling_aws/README.md thoroughly
-- [ ] Understand iterative scaling approach
-- [ ] Map AWS services to concepts
-
-### Day 6-7: Review and Consolidation
-- [ ] Review all problems solved so far
-- [ ] Create personal summary notes
-- [ ] Daily Anki reviews completed
-
-**Week 9 Notes:**
-```
-(Add your notes here)
-```
-
----
-
-## Week 10: Object-Oriented Design Problems
-
-### Day 1-2: LRU Cache
-- [ ] Study solutions/object_oriented_design/lru_cache/lru_cache.ipynb
-- [ ] Implement in JavaScript/TypeScript
-
-### Day 3-4: Hash Map
-- [ ] Study solutions/object_oriented_design/hash_table/hash_map.ipynb
-- [ ] Understand collision handling
-
-### Day 5-6: Parking Lot
-- [ ] Study solutions/object_oriented_design/parking_lot/parking_lot.ipynb
-- [ ] Apply OO design principles
-
-### Day 7: Online Chat
-- [ ] Study solutions/object_oriented_design/online_chat/online_chat.ipynb
-- [ ] Daily Anki reviews completed
-
 **Week 10 Notes:**
 ```
 (Add your notes here)
@@ -306,22 +313,24 @@
 
 ---
 
-## Week 11: Real-World Architectures
+## Week 11: Advanced Problems + OO Design
 
-### Day 1-2: Twitter Architecture
-- [ ] Read Twitter timeline scalability article
-- [ ] Study how they handle 150M users
+### Day 1-2: Design Sales Rank + Scaling AWS
+- [ ] Review solutions/system_design/sales_rank/README.md
+- [ ] Review solutions/system_design/scaling_aws/README.md
+- [ ] Understand MapReduce patterns
 
-### Day 3-4: Netflix and Instagram
-- [ ] Read Netflix architecture article
-- [ ] Read Instagram architecture article
+### Day 3-4: OO Design - LRU Cache & Hash Map
+- [ ] Study solutions/object_oriented_design/lru_cache/lru_cache.ipynb
+- [ ] Study solutions/object_oriented_design/hash_table/hash_map.ipynb
 
-### Day 5-6: Facebook/WhatsApp
-- [ ] Read Facebook engineering articles
-- [ ] Read WhatsApp architecture article
+### Day 5-6: OO Design - Parking Lot & Online Chat
+- [ ] Study solutions/object_oriented_design/parking_lot/parking_lot.ipynb
+- [ ] Study solutions/object_oriented_design/online_chat/online_chat.ipynb
 
-### Day 7: Target Company Engineering Blogs
-- [ ] Read 2-3 blogs from companies you're targeting
+### Day 7: Review and Consolidation
+- [ ] Review all problems solved
+- [ ] Complete whiteboard-prompts.md Level 3
 - [ ] Daily Anki reviews completed
 
 **Week 11 Notes:**
@@ -333,23 +342,29 @@
 
 ## Week 12: Mock Interviews and Final Review
 
-### Day 1-3: Additional Problems
-- [ ] Design Dropbox file sync
-- [ ] Design Google Docs
-- [ ] Design WhatsApp
-- [ ] Design API rate limiter
+### Day 1-2: Additional Problems (Using Whiteboard Prompts)
+- [ ] Practice whiteboard-prompts.md: Prompt 4.1 (Design Uber)
+- [ ] Practice whiteboard-prompts.md: Prompt 4.2 (Design WhatsApp)
+- [ ] Practice whiteboard-prompts.md: Prompt 4.3 (Design YouTube)
 
-### Day 4-5: Mock Interviews
-- [ ] Schedule mock interview 1
+### Day 3-4: Full Mock Interviews
+- [ ] Schedule mock interview 1 (use interview-template.md)
 - [ ] Complete mock interview 1
+- [ ] Review and identify gaps
 - [ ] Schedule mock interview 2
 - [ ] Complete mock interview 2
 
-### Day 6-7: Final Review
+### Day 5-6: Targeted Review
+- [ ] Complete ALL exercises/self-quiz.md tests
+- [ ] Re-practice weak areas identified
+- [ ] Complete remaining quick drills
+
+### Day 7: Final Preparation
 - [ ] Complete all outstanding Anki reviews
-- [ ] Re-read interview approach framework
 - [ ] Light review of key patterns
-- [ ] Self-assessment
+- [ ] Review estimation cheatsheet
+- [ ] Review latency numbers
+- [ ] Confidence check!
 
 **Week 12 Notes:**
 ```
