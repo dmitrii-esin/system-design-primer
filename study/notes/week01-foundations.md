@@ -127,6 +127,35 @@ From Harvard's CS75 Scalability Lecture:
 3. **Database Replication** - Read replicas
 4. **Database Partitioning** - Sharding data
 
+---
+
+## 🤔 Elaboration Questions (Ask Yourself)
+
+Use these to deepen understanding. Answer without looking at notes.
+
+### WHY Questions
+1. **Why** can't a distributed system have all three CAP properties?
+2. **Why** do networks fail (causing partitions)?
+3. **Why** would anyone choose eventual consistency over strong consistency?
+4. **Why** is five-nines (99.999%) availability so much harder than four-nines?
+
+### HOW Questions
+1. **How** does a system detect that a partition has occurred?
+2. **How** does eventual consistency actually work under the hood?
+3. **How** do you calculate combined availability for systems in parallel?
+
+### WHAT-IF Questions
+1. **What if** your banking app used eventual consistency?
+2. **What if** you needed 99.999% availability but only had one server?
+3. **What if** a partition lasts for days instead of seconds?
+
+### Connection Questions
+1. How does CAP theorem relate to database replication (Week 3)?
+2. How does caching (Week 4) affect consistency?
+3. How do message queues (Week 5) help with availability?
+
+---
+
 ## Study Checklist
 
 - [ ] Can explain CAP theorem in 2 minutes
@@ -135,6 +164,7 @@ From Harvard's CS75 Scalability Lecture:
 - [ ] Calculate availability for systems in sequence/parallel
 - [ ] Explain vertical vs horizontal scaling trade-offs
 - [ ] Memorized latency numbers (see reference/latency-numbers.md)
+- [ ] Answered elaboration questions above without notes
 
 ## Key Terms Flashcard Summary
 
