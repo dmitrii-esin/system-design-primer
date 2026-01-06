@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design Mastery | Learning Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">System Design</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <span></span>
+                </button>
+            </div>
+            
+            <div class="progress-overview">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overallProgress"></div>
+                </div>
+                <span class="progress-text" id="progressText">0% Complete</span>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <!-- Navigation items will be injected by JavaScript -->
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="https://github.com/donnemartin/system-design-primer" target="_blank" class="github-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home View -->
+            <section class="view home-view active" id="homeView">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Master System Design</h1>
+                        <p class="hero-subtitle">A structured 12-week learning path to ace system design interviews</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" id="startLearning">
+                                Start Learning
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            <button class="btn btn-secondary" id="viewProgress">View Progress</button>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Weekly Modules</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Exercises</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Weeks to Master</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <h2 class="section-title">Learning Techniques</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🧠</div>
+                            <h3>Spaced Repetition</h3>
+                            <p>Use Anki flashcards for long-term retention of key concepts</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📝</div>
+                            <h3>Active Recall</h3>
+                            <p>Test yourself with quizzes and exercises, not just reading</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Feynman Technique</h3>
+                            <p>Explain concepts out loud to identify knowledge gaps</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">✏️</div>
+                            <h3>Whiteboard Practice</h3>
+                            <p>Draw diagrams to build muscle memory for interviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curriculum-overview">
+                    <h2 class="section-title">Curriculum Overview</h2>
+                    <div class="curriculum-phases">
+                        <div class="phase">
+                            <div class="phase-header">
+                                <span class="phase-number">Phase 1</span>
+                                <span class="phase-title">Foundations</span>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>Core Concepts & CAP Theorem</li>
+                                <li>Infrastructure Components</li>
+                                <li>Database Fundamentals</li>
+                            </ul>
+                        </div>
+                        <div class="phase">
+                            <div class="phase-header">
+                                <span class="phase-number">Phase 2</span>
+                                <span class="phase-title">Intermediate</span>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>Caching Strategies</li>
+                                <li>Async Processing</li>
+                                <li>Interview Framework</li>
+                            </ul>
+                        </div>
+                        <div class="phase">
+                            <div class="phase-header">
+                                <span class="phase-number">Phase 3</span>
+                                <span class="phase-title">Advanced</span>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>Security & API Design</li>
+                                <li>Rate Limiting & Monitoring</li>
+                                <li>Mock Interviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lesson View -->
+            <section class="view lesson-view" id="lessonView">
+                <div class="lesson-header">
+                    <button class="back-btn" id="backToNav">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Back
+                    </button>
+                    <div class="lesson-meta">
+                        <span class="lesson-week" id="lessonWeek">Week 1</span>
+                        <span class="lesson-status" id="lessonStatus">Not Started</span>
+                    </div>
+                </div>
+                
+                <article class="lesson-content" id="lessonContent">
+                    <!-- Lesson content will be injected here -->
+                </article>
+
+                <div class="lesson-navigation">
+                    <button class="btn btn-outline" id="prevLesson">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Previous
+                    </button>
+                    <button class="btn btn-primary" id="markComplete">
+                        Mark as Complete
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline" id="nextLesson">
+                        Next
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Exercise View -->
+            <section class="view exercise-view" id="exerciseView">
+                <div class="exercise-header">
+                    <button class="back-btn" id="backFromExercise">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Back to Lesson
+                    </button>
+                    <h2 class="exercise-title" id="exerciseTitle">Exercise</h2>
+                </div>
+                
+                <div class="exercise-content" id="exerciseContent">
+                    <!-- Exercise content will be injected here -->
+                </div>
+            </section>
+
+            <!-- Quiz View -->
+            <section class="view quiz-view" id="quizView">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h2 class="quiz-title" id="quizTitle">Self-Quiz</h2>
+                        <div class="quiz-progress">
+                            <span id="quizProgress">Question 1 of 5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question" id="quizQuestion">
+                        <!-- Quiz question will be injected here -->
+                    </div>
+
+                    <div class="quiz-actions">
+                        <button class="btn btn-secondary" id="showAnswer">Show Answer</button>
+                        <button class="btn btn-primary" id="nextQuestion">Next Question</button>
+                    </div>
+
+                    <div class="quiz-answer hidden" id="quizAnswer">
+                        <!-- Answer will be shown here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress View -->
+            <section class="view progress-view" id="progressView">
+                <div class="progress-header">
+                    <h1>Your Progress</h1>
+                    <button class="btn btn-outline" id="resetProgress">Reset Progress</button>
+                </div>
+
+                <div class="progress-dashboard">
+                    <div class="progress-card main-progress">
+                        <div class="circular-progress" id="circularProgress">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="bg" cx="50" cy="50" r="45"/>
+                                <circle class="progress" cx="50" cy="50" r="45" id="progressCircle"/>
+                            </svg>
+                            <div class="progress-value" id="progressValue">0%</div>
+                        </div>
+                        <h3>Overall Completion</h3>
+                    </div>
+
+                    <div class="progress-card stats">
+                        <h3>Statistics</h3>
+                        <div class="stat-row">
+                            <span>Lessons Completed</span>
+                            <span id="lessonsCompleted">0 / 8</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Exercises Done</span>
+                            <span id="exercisesDone">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Study Streak</span>
+                            <span id="studyStreak">0 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week-progress">
+                    <h2>Weekly Breakdown</h2>
+                    <div class="week-grid" id="weekGrid">
+                        <!-- Week progress cards will be injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+    </button>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="lessons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
